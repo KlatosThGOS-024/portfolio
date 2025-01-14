@@ -1,6 +1,8 @@
+import { Experinces } from "../components/Experinces";
 import { HeroSection } from "../components/HeroSection";
 import NavBar from "../components/NavBar";
 import { SkillsSection } from "../components/SkillsSection";
+import { Works } from "../components/Works";
 
 export const Header = () => {
   return (
@@ -16,6 +18,8 @@ export const HomePage = () => {
     <main className="bg-[#28242C] overflow-x-hidden w-full  h-screen">
       <Header />
       <SkillsSection />
+      <Experinces />
+      <Works />
     </main>
   );
 };
