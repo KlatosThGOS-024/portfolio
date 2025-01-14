@@ -1,3 +1,4 @@
+import { Education } from "../components/Education";
 import { Experinces } from "../components/Experinces";
 import { HeroSection } from "../components/HeroSection";
 import NavBar from "../components/NavBar";
@@ -20,6 +21,7 @@ export const HomePage = () => {
       <SkillsSection />
       <Experinces />
       <Works />
+      <Education />
     </main>
   );
 };
