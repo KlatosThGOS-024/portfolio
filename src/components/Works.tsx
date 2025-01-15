@@ -1,3 +1,6 @@
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 interface WorkType {
   imgSrc: string;
   header: string;
@@ -65,6 +68,41 @@ function Work({ imgSrc, header, subHeader, technologies }: WorkType) {
 }
 
 export const Works = () => {
+  useGSAP(() => {
+    gsap.from(".work1", {
+      y: 200,
+      opacity: 0,
+      scale: 0.5,
+      duration: 1.4,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: ".work1",
+        start: "top 120%",
+        end: "bottom 50%",
+        toggleActions: "play none none reverse",
+
+        scroller: ".main-scroller",
+      },
+    });
+  });
+  useGSAP(() => {
+    gsap.from(".work2", {
+      y: 200,
+      opacity: 0,
+      scale: 0.5,
+      duration: 1.4,
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: ".work2",
+        start: "top 120%",
+        end: "bottom 50%",
+        toggleActions: "play none none reverse",
+
+        scroller: ".main-scroller",
+      },
+    });
+  });
+
   return (
     <section className="xl:w-[1496px] mt-[64px] px-[64px]  mx-auto lg:w-[1028px] md:w-[960px]">
       <div>
@@ -85,34 +123,78 @@ export const Works = () => {
           className="grid max-lg:grid-cols-2 max-md:grid-cols-1 
         grid-cols-3 gap-[28px]"
         >
-          <Work
-            header="PromptPilot"
-            subHeader="Bla blahBla blahBla blahBla blahBla blahBla blah"
-            technologies={[
-              "React ",
-              "React",
-              "React",
-              "React",
-              "React",
-              "React",
-              "React",
-              "React",
-              "React",
-            ]}
-            imgSrc="/images/pp.jpg"
-          />
-          <Work
-            header="PromptPilot"
-            subHeader="Bla blah"
-            technologies={["Bext ", "react", "react"]}
-            imgSrc="/images/pp.jpg"
-          />
-          <Work
-            header="PromptPilot"
-            subHeader="Bla blah"
-            technologies={["Bext ", "react", "react"]}
-            imgSrc="/images/pp.jpg"
-          />
+          <div className="work1">
+            <Work
+              header="PromptPilot"
+              subHeader="Bla blahBla blahBla blahBla blahBla blahBla blah"
+              technologies={[
+                "React ",
+                "React",
+                "React",
+                "React",
+                "React",
+                "React",
+                "React",
+                "React",
+                "React",
+              ]}
+              imgSrc="/images/pp.jpg"
+            />
+          </div>
+          <div className="work1">
+            {" "}
+            <Work
+              header="PromptPilot"
+              subHeader="Bla blah"
+              technologies={["Bext ", "react", "react"]}
+              imgSrc="/images/pp.jpg"
+            />{" "}
+          </div>
+          <div className="work1">
+            {" "}
+            <Work
+              header="PromptPilot"
+              subHeader="Bla blah"
+              technologies={["Bext ", "react", "react"]}
+              imgSrc="/images/pp.jpg"
+            />
+          </div>
+          <div className="work2">
+            <Work
+              header="PromptPilot"
+              subHeader="Bla blahBla blahBla blahBla blahBla blahBla blah"
+              technologies={[
+                "React ",
+                "React",
+                "React",
+                "React",
+                "React",
+                "React",
+                "React",
+                "React",
+                "React",
+              ]}
+              imgSrc="/images/pp.jpg"
+            />
+          </div>
+          <div className="work2">
+            {" "}
+            <Work
+              header="PromptPilot"
+              subHeader="Bla blah"
+              technologies={["Bext ", "react", "react"]}
+              imgSrc="/images/pp.jpg"
+            />{" "}
+          </div>
+          <div className="work2">
+            {" "}
+            <Work
+              header="PromptPilot"
+              subHeader="Bla blah"
+              technologies={["Bext ", "react", "react"]}
+              imgSrc="/images/pp.jpg"
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -1,45 +1,34 @@
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const Education = () => {
-  useGSAP(() => {
-    gsap.fromTo(
-      ".schl",
-      {
-        opacity: 0,
+  const useGSAPAnimation = (className: string) => {
+    useGSAP(() => {
+      gsap.from(className, {
         x: -300,
-      },
-      {
-        opacity: 1,
-        x: 0,
-        duration: 1.2,
+        opacity: 0,
+        duration: 1.6,
+        ease: "power4.out",
         scrollTrigger: {
-          trigger: ".schl",
-          start: "top 20%", // Starts animation when .schl is 80% in the viewport
-          end: "top 50%", // Ends animation when .schl is 20% out of the viewport
-          onEnter: () => {
-            gsap.to(".schl", { opacity: 1, x: 0, duration: 1.2 });
-          },
-          onLeave: () => {
-            gsap.to(".schl", { opacity: 0, x: -300, duration: 1.2 });
-          },
-          onEnterBack: () => {
-            gsap.to(".schl", { opacity: 1, x: 0, duration: 1.2 });
-          },
-          onLeaveBack: () => {
-            gsap.to(".schl", { opacity: 0, x: -300, duration: 1.2 });
-          },
-          scrub: true, // Ensures smooth transition between states
+          trigger: className,
+          start: "top 80%",
+          end: "bottom 50%",
+          toggleActions: "play none none reverse",
+          markers: false,
+          scroller: ".main-scroller",
         },
-      }
-    );
-  });
+      });
+    }, [className]);
+  };
+  useGSAPAnimation(`.schl`);
+  useGSAPAnimation(`.clg`);
   return (
-    <section className="xl:w-[1496px] mt-[64px]  mx-auto lg:w-[1028px] md:w-[960px]">
+    <section className="education xl:w-[1496px] mt-[64px]  mx-auto lg:w-[1028px] md:w-[960px]">
       <div className="py-[96px] px-[64px]">
         <h2
           className="font-[700] mb-[96px] text-center text-white
