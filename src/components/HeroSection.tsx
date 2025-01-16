@@ -1,3 +1,63 @@
+import gsap from "gsap";
+import { TextPlugin } from "gsap/TextPlugin";
+import { useGSAP } from "@gsap/react";
+
+// gsap.registerPlugin(TextPlugin);
+
+// const Component = () => {
+//   const words = ["Fullstack Developer", "Software Developer", "Pentester"];
+//   useGSAP(() => {
+//     gsap.to(".cursor", {
+//       opacity: 0,
+//       repeat: -1,
+//       ease: "power2.inOut",
+//     });
+//   });
+//   const boxTl = gsap.timeline();
+//   boxTl
+//     .to(".box", {
+//       duration: 1,
+
+//       delay: 0.5,
+//       ease: "power4.inOut",
+//     })
+//     .from(".hi", { duration: 1, y: "7vw", ease: "power3.out" })
+//     .to(".box", {
+//       duration: 1,
+//       height: "7vw",
+//       ease: "elastic.out",
+//       onComplete: () => {
+//         masterTl.play();
+//       },
+//     })
+//     .to(".box", {
+//       duration: 2,
+//       autoAlpha: 0.7,
+//       yoyo: true,
+//       repeat: -1,
+//       ease: "rough({ template: none.out, strength:  1, points: 20, taper: 'none', randomize: true, clamp: false})",
+//     });
+
+//   const masterTl = gsap.timeline({ repeat: -1 }).pause();
+//   words.forEach((word) => {
+//     const tl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
+//     tl.to(".text", {
+//       duration: 1,
+//       text: word,
+//     });
+//     masterTl.add(tl);
+//   });
+//   return (
+//     <div>
+//       <br></br>
+//       <span className="box"></span>
+//       <span className="hi">Hi</span>
+//       <span className="text"></span>
+//       <span className="cursor">_</span>
+//     </div>
+//   );
+// };
+
 export const HeroSection = () => {
   return (
     <section className="mt-[128px] px-[32px]  h-screen">
@@ -6,7 +66,7 @@ export const HeroSection = () => {
           className="px-[96px] max-lg:p-3 max-lg:flex-col-reverse items-center justify-center
       text-[#fff] flex"
         >
-          <div className="  px-[28px] max-lg:space-y-[28px]">
+          <div className="leftSide px-[28px] max-lg:space-y-[28px]">
             <h2 className=" max-lg:mt-[58px] max-lg:text-[38px] text-[64px] font-semibold">
               Hi there<span className=" text-[#FFB809]">!</span>
             </h2>
@@ -24,12 +84,12 @@ export const HeroSection = () => {
                 "debitis saepe sint nobis nostrum itaque! Et saepe sint libero
                 corporis ducimus!"
               </span>
-              <div className="flex gap-[46px]">
+              <div className="flex gap-[64px]">
                 <span className=" bg-[#424242] p-3 rounded-full hover:text-[#FFB809]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="35px"
+                    height="35px"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -45,8 +105,8 @@ export const HeroSection = () => {
                 <span className=" bg-[#424242] p-3 rounded-full hover:text-[#FFB809]">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="35px"
+                    height="35px"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -67,8 +127,8 @@ export const HeroSection = () => {
                   {" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="35px"
+                    height="35px"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -83,13 +143,25 @@ export const HeroSection = () => {
                 </span>
               </div>
 
-              <button className=" bg-[#FFB809] px-[26px] py-2 rounded-xl">
+              <button
+                className=" bg-[#FFB809] hover:scale-110 transition-all duration-500  ease-in-out text-black font-bold text-[21px]
+               px-[26px] py-2 rounded-xl"
+              >
                 Download resume
               </button>
             </div>
           </div>
-          <div className="  max-lg:w-1/2">
+          <div className="rightSide  max-lg:w-1/2">
             <img src="../../public/images/dev.png" />
+            <p className=" font-[700] mt-4 text-[28px] text-center ">
+              Priyanshu Tiwari
+            </p>
+            <p className="text-gray-600 mt-4 text-center text-[21px]">
+              @priyanshu.dev
+            </p>{" "}
+            <p className="text-[#FFB809] mt-4 text-center text-[21px]">
+              Full stack Developer
+            </p>
           </div>
         </div>
       </div>

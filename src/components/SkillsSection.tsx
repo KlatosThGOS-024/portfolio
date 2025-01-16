@@ -715,7 +715,6 @@ function SkillSec4() {
         end: "top 10%",
         toggleActions: "play none none reverse",
         scroller: ".main-scroller",
-        markers: true,
       },
     });
     gsap.from(".middleDiv", {
