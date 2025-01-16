@@ -1,3 +1,4 @@
+import { Certificate } from "../components/Certificate";
 import { Education } from "../components/Education";
 import { Experinces } from "../components/Experinces";
 import { HeroSection } from "../components/HeroSection";
@@ -23,6 +24,7 @@ export const HomePage = () => {
       <Experinces />
       <Works />
       <Education />
+      <Certificate />
     </main>
   );
 };
