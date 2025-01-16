@@ -2,7 +2,7 @@ import { Education } from "../components/Education";
 import { Experinces } from "../components/Experinces";
 import { HeroSection } from "../components/HeroSection";
 import NavBar from "../components/NavBar";
-import SlidingText from "../components/new";
+
 import { SkillsSection } from "../components/SkillsSection";
 import { Works } from "../components/Works";
 
@@ -23,7 +23,6 @@ export const HomePage = () => {
       <Experinces />
       <Works />
       <Education />
-      <SlidingText />
     </main>
   );
 };

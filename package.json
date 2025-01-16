@@ -16,6 +16,7 @@
     "@studio-freight/react-lenis": "^0.0.47",
     "autoprefixer": "^10.4.20",
     "gsap": "^3.12.5",
+    "hamburger-react": "^2.5.2",
     "heroicons": "^2.2.0",
     "lenis": "^1.1.19",
     "postcss": "^8.4.49",

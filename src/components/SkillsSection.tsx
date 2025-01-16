@@ -7,12 +7,12 @@ function SkillSec1() {
       x: 200,
       opacity: 0,
       scale: 0.5,
-      duration: 1.4,
+      duration: 0.9,
       ease: "power4.out",
       scrollTrigger: {
         trigger: ".frontDiv",
-        start: "top 90%",
-        end: "top 50%",
+        start: "bottom 90%",
+        end: "bottom 90%",
         toggleActions: "play none none reverse",
         scroller: ".main-scroller",
       },
@@ -22,24 +22,23 @@ function SkillSec1() {
       x: -200,
       opacity: 0,
       scale: 0.5,
-      duration: 1.4,
+      duration: 0.6,
       ease: "power4.out",
       delay: 0.2,
       scrollTrigger: {
         trigger: ".frontDiv",
-        start: "top 90%",
-        end: "top 50%",
+        start: "bottom 90%",
+        end: "bottom 90%",
         toggleActions: "play none none reverse",
         scroller: ".main-scroller",
       },
     });
     gsap.from(".firstDiv", {
-      y: 200,
+      y: -200,
       opacity: 0,
       scale: 0.5,
-      duration: 1.4,
+      duration: 0.9,
       ease: "power4.out",
-      delay: 0.2,
       scrollTrigger: {
         trigger: ".firstDiv",
         start: "top 120%",
@@ -52,11 +51,41 @@ function SkillSec1() {
       y: 200,
       opacity: 0,
       scale: 0.5,
-      duration: 1.4,
+      duration: 0.9,
       ease: "power4.out",
       delay: 0.2,
       scrollTrigger: {
         trigger: ".secondDiv",
+        start: "top 100%",
+        end: "top 50%",
+        toggleActions: "play none none reverse",
+        scroller: ".main-scroller",
+      },
+    });
+    gsap.from(".firstUpperDiv", {
+      y: 200,
+      opacity: 0,
+      scale: 0.5,
+      duration: 0.9,
+      ease: "power4.out",
+      delay: 0.2,
+      scrollTrigger: {
+        trigger: ".firstUpperDiv",
+        start: "top 100%",
+        end: "top 50%",
+        toggleActions: "play none none reverse",
+        scroller: ".main-scroller",
+      },
+    });
+    gsap.from(".SecondUpperDiv", {
+      y: 200,
+      opacity: 0,
+      scale: 0.5,
+      duration: 0.9,
+      ease: "power4.out",
+      delay: 0.2,
+      scrollTrigger: {
+        trigger: ".SecondUpperDiv",
         start: "top 100%",
         end: "top 50%",
         toggleActions: "play none none reverse",
@@ -89,11 +118,11 @@ function SkillSec1() {
             Frontend Dev
           </h2>
         </div>
-        <h3 className=" text-[#FFB809] text-center font-[600] mt-[44px] text-lg ">
+        <h3 className="frontDiv text-[#FFB809] text-center font-[600] mt-[44px] text-lg ">
           Frameworks & Runtime
         </h3>
         <div
-          className=" firstDiv grid max-lg:grid-cols-2 w-full lg:grid-cols-3
+          className="grid firstUpperDiv max-lg:grid-cols-2 lg:grid-cols-3 
          mt-[48px] max-lg:gap-y-[64px] lg:space-x-[106px]"
         >
           <div className=" space-y-6 flex flex-col items-center">
@@ -198,12 +227,12 @@ function SkillSec1() {
             Backend Dev
           </h2>
         </div>
-        <span className=" text-[#FFB809] font-[600]  mt-[44px] text-lg ">
+        <span className="BackDiv text-[#FFB809] font-[600]  mt-[44px] text-lg ">
           Frameworks & Runtime
         </span>
 
         <div
-          className="grid firstDiv w-full max-lg:grid-cols-2 grid-cols-3 
+          className="grid SecondUpperDiv w-full max-lg:grid-cols-2 grid-cols-3 
           mt-[48px] max-lg:gap-x-[96px] max-lg:gap-y-[64px] 
           lg:space-x-[106px]"
         >
@@ -356,26 +385,20 @@ function SkillSec1() {
     </div>
   );
 }
-function SkillSec21() {
-  return (
-    <div className="my-[64px] border border-b-0 border-x-0 border-t-[2px] border-t-[#69666c] p-[38px]">
-      <div className=" flex justify-around mt-[48px] "></div>
-    </div>
-  );
-}
+
 function SkillSec2() {
   useGSAP(() => {
     gsap.from(".library", {
       y: 200,
       opacity: 0,
       scale: 0.5,
-      duration: 1.2,
+      duration: 0.9,
       ease: "power4.inOut",
       delay: 0.2,
       scrollTrigger: {
         trigger: ".library",
-        start: "top 110%",
-        end: "top 50%",
+        start: "-70% bottom",
+        end: "top top",
         toggleActions: "play none none reverse",
         scroller: ".main-scroller",
       },
@@ -550,7 +573,7 @@ function SkillSec3() {
       delay: 0.2,
       scrollTrigger: {
         trigger: ".infraData",
-        start: "top 80%",
+        start: "-20% 80%",
         end: "top 10%",
         toggleActions: "play none none reverse",
         scroller: ".main-scroller",
@@ -565,7 +588,7 @@ function SkillSec3() {
       delay: 0.2,
       scrollTrigger: {
         trigger: ".infraData",
-        start: "top 80%",
+        start: "-20% 80%",
         end: "top 10%",
         toggleActions: "play none none reverse",
         scroller: ".main-scroller",
@@ -701,60 +724,138 @@ function SkillSec3() {
   );
 }
 function SkillSec4() {
-  useGSAP(() => {
-    gsap.from(".firstDiv", {
-      x: -100,
-      opacity: 0,
-      scale: 0.5,
-      duration: 1.2,
-      ease: "power4.inOut",
-      delay: 0.2,
-      scrollTrigger: {
-        trigger: ".skillSection4",
-        start: "top 80%",
-        end: "top 10%",
-        toggleActions: "play none none reverse",
-        scroller: ".main-scroller",
-      },
-    });
-    gsap.from(".middleDiv", {
-      y: 100,
-      opacity: 0,
-      scale: 0.5,
-      duration: 1.2,
-      ease: "power4.inOut",
-      delay: 0.2,
-      scrollTrigger: {
-        trigger: ".skillSection4",
-        start: "top 80%",
-        end: "top 10%",
-        toggleActions: "play none none reverse",
-        scroller: ".main-scroller",
-      },
-    });
-    gsap.from(".thirdDiv", {
-      x: 100,
-      opacity: 0,
-      scale: 0.5,
-      duration: 1.2,
-      ease: "power4.inOut",
-      delay: 0.2,
-      scrollTrigger: {
-        trigger: ".skillSection4",
-        start: "top 80%",
-        end: "top 10%",
-        toggleActions: "play none none reverse",
-        scroller: ".main-scroller",
-      },
-    });
-  });
   return (
     <div
       className="skillSection4 my-[48px] border border-b-0 border-x-0 border-t-[2px]
      border-t-[#69666c] p-[64px]"
     >
-      <div className=" grid grid-cols-3 max-lg:grid-cols-1 gap-[48px]">
-        <div className="firstDiv border-r-2 max-lg:border-0 border-r-[#69666c]">
+      <div className="grid grid-cols-3 max-lg:grid-cols-1 ">
+        <div
+          className="  border-r-2 max-lg:border-0 
+        border-r-[#69666c]"
+        >
+          <div className=" gap-6 p-[28px] flex items-center flex-col ">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="code-branch"
+              className=" w-[44px] h-[44px]"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+            >
+              <path
+                fill="#FFB809"
+                d="M80 104a24 24 0 1 0 0-48 24 24 0 1 0 0 48zm80-24c0 32.8-19.7 61-48 73.3v87.8c18.8-10.9 40.7-17.1 64-17.1h96c35.3 0 64-28.7 64-64v-6.7C307.7 141 288 112.8 288 80c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V160c0 70.7-57.3 128-128 128H176c-35.3 0-64 28.7-64 64v6.7c28.3 12.3 48 40.5 48 73.3c0 44.2-35.8 80-80 80s-80-35.8-80-80c0-32.8 19.7-61 48-73.3V352 153.3C19.7 141 0 112.8 0 80C0 35.8 35.8 0 80 0s80 35.8 80 80zm232 0a24 24 0 1 0 -48 0 24 24 0 1 0 48 0zM80 456a24 24 0 1 0 0-48 24 24 0 1 0 0 48z"
+              ></path>
+            </svg>
+            <h3 className=" text-[28px] text-white font-extrabold">
+              Version Control
+            </h3>
+          </div>
+          <div
+            className="w-fit flex flex-col items-center text-center 
+          space-y-3 transition ease-in-out duration-500 text-customGrayHeavy
+           dark:text-[#AAAAAA] hover:scale-125 hover:text-black
+            dark:hover:text-white "
+          >
+            <svg height="45px" width="45px" viewBox="0 0 128 128">
+              <g fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                ></path>
+                <path d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"></path>
+              </g>
+            </svg>
+            <span>Github</span>
+          </div>
+        </div>
+        <div>
+          <div className="py-[28px]  gap-3  flex items-center flex-col">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="cloud"
+              className=" w-[44px] h-[44px]"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 512"
+            >
+              <path
+                fill="#FFB809"
+                d="M0 336c0 79.5 64.5 144 144 144H512c70.7 0 128-57.3 128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7 6.4-22.4 6.4-34.6c0-53-43-96-96-96c-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32C167.6 32 96 103.6 96 192c0 2.7 .1 5.4 .2 8.1C40.2 219.8 0 273.2 0 336z"
+              ></path>
+            </svg>
+            <h3 className=" text-[28px] text-[#FFB809] font-[700]">Hosting</h3>
+          </div>{" "}
+          <div
+            className="w-fit flex flex-col items-center text-center
+          space-y-3 transition ease-in-out duration-500 px-[48px]
+           hover:scale-125 hover:text-black
+           dark:hover:text-white "
+          >
+            <div className="h-12 flex items-center scale-75">
+              <div>
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M12 1L24 22H0L12 1Z" fill="#fff"></path>
+                </svg>
+              </div>
+            </div>
+            <p className="dark:text-[#AAAAAA]">Vercel</p>
+          </div>
+        </div>
+        <div>
+          <div className=" gap-6 py-[28px]  flex items-center flex-col ">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="rocket"
+              height="45px"
+              width="45px"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="#FFB809"
+                d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"
+              ></path>
+            </svg>
+            <h3 className=" text-[28px] text-white font-extrabold">CI/CD</h3>
+          </div>{" "}
+          <div
+            className=" w-fit flex flex-col items-center
+           text-center space-y-3 transition ease-in-out
+            duration-500 text-customGrayHeavy dark:text-[#AAAAAA]
+             hover:scale-125 hover:text-black
+              dark:hover:text-white "
+          >
+            <svg height="45px" width="45px" viewBox="0 0 128 128">
+              <g fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"
+                ></path>
+                <path d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"></path>
+              </g>
+            </svg>
+            <span>Github Action</span>
+          </div>
+        </div>{" "}
+      </div>
+      {/* <div className=" bg-red-600 border-r-2 max-lg:border-0 
+        border-r-[#69666c]">
           <div className=" gap-6 p-[28px] flex items-center flex-col ">
             <svg
               aria-hidden="true"
@@ -787,6 +888,46 @@ function SkillSec4() {
               </g>
             </svg>
             <span>Github</span>
+          </div>
+        </div> */}
+      {/* <div className="middleDiv">
+          <div className=" gap-3 p-[28px] flex items-center flex-col">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="cloud"
+              className=" w-[44px] h-[44px]"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 512"
+            >
+              <path
+                fill="#FFB809"
+                d="M0 336c0 79.5 64.5 144 144 144H512c70.7 0 128-57.3 128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7 6.4-22.4 6.4-34.6c0-53-43-96-96-96c-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32C167.6 32 96 103.6 96 192c0 2.7 .1 5.4 .2 8.1C40.2 219.8 0 273.2 0 336z"
+              ></path>
+            </svg>
+            <h3 className=" text-[28px] text-[#FFB809] font-[700]">Hosting</h3>
+          </div>
+          <div
+            className="w-fit flex flex-col items-center text-center
+          space-y-3 transition ease-in-out duration-500 
+           hover:scale-125 hover:text-black
+           dark:hover:text-white "
+          >
+            <div className="h-12 flex items-center scale-75">
+              <div>
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M12 1L24 22H0L12 1Z" fill="currentColor"></path>
+                </svg>
+              </div>
+            </div>
+            <p>Vercel</p>
           </div>
         </div>
         <div className="middleDiv">
@@ -829,7 +970,6 @@ function SkillSec4() {
             <p>Vercel</p>
           </div>
         </div>
-
         <div className="thirdDiv border-l-2 max-lg:border-0  lg:px-[64px] border-l-[#69666c]">
           <div className=" gap-6 py-[28px]  flex items-center flex-col ">
             <svg
@@ -869,8 +1009,7 @@ function SkillSec4() {
             </svg>
             <span>Github Action</span>
           </div>
-        </div>
-      </div>
+        </div> */}
     </div>
   );
 }
