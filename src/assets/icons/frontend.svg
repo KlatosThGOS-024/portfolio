@@ -3,7 +3,7 @@
               focusable="false"
               data-prefix="fas"
               data-icon="code"
-              className="svg-inline--fa fa-code fa-2x text-primary w-[64px] text-[#FFB809]"
+              className="svg-inline--fa fa-code fa-2x text-primary w-[64px] text-primary-0"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 640 512"

@@ -28,7 +28,10 @@ export const Education = () => {
   useGSAPAnimation(`.schl`);
   useGSAPAnimation(`.clg`);
   return (
-    <section className="education xl:w-[1496px] mt-[64px]  mx-auto lg:w-[1028px] md:w-[960px]">
+    <section
+      id="education"
+      className="education xl:w-[1496px] mt-[64px]  mx-auto lg:w-[1028px] md:w-[960px]"
+    >
       <div className="py-[96px] px-[64px]">
         <h2
           className="font-[700] mb-[96px] text-center text-white

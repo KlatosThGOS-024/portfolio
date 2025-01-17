@@ -104,7 +104,10 @@ export const Works = () => {
   });
 
   return (
-    <section className="xl:w-[1496px] mt-[64px] px-[64px]  mx-auto lg:w-[1028px] md:w-[960px]">
+    <section
+      id="works"
+      className="xl:w-[1496px] mt-[64px] px-[64px]  mx-auto lg:w-[1028px] md:w-[960px]"
+    >
       <div>
         <h2 className=" text-white px-[48px] font-semibold  text-[48px] text-center">
           Works

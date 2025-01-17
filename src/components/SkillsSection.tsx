@@ -67,7 +67,7 @@ function SkillSec1() {
   });
 
   return (
-    <div className=" p-[64px] lg:flex mt-[64px] ">
+    <div className=" p-[64px] lg:flex mt-[64px]  ">
       {/* {LEFT SIDE} */}
       <div>
         <div className="frontDiv flex flex-col items-center">
@@ -76,7 +76,7 @@ function SkillSec1() {
             Frontend Dev
           </h2>
         </div>
-        <h3 className="frontDiv text-[#FFB809] text-center font-[600] mt-[44px] text-lg ">
+        <h3 className="frontDiv text-primary-0 text-center font-[600] mt-[44px] text-lg ">
           Frameworks & Runtime
         </h3>
         <div
@@ -86,7 +86,7 @@ function SkillSec1() {
           <div className=" space-y-6 flex flex-col items-center">
             <img
               className="hover:scale-150 transition duration-500 ease-in-out"
-              src="public/icons/nextjs.svg"
+              src="/icons/nextjs.svg"
               alt="Next.js Icon"
             />
 
@@ -94,7 +94,7 @@ function SkillSec1() {
           </div>
           <div className=" space-y-6 flex flex-col items-center">
             <img
-              src="public/icons/nuxtjs.svg"
+              src="/icons/nuxtjs.svg"
               className="hover:fill-[#fff] hover:scale-150 transition  duration-500 ease-in-out"
             />
             <h3 className=" text-[#808080] text-[21px]">Nuxt.js</h3>
@@ -108,7 +108,7 @@ function SkillSec1() {
           </div>
         </div>
         {/* {LANGUAGES} */}
-        <h3 className="secondDiv text-[#FFB809] text-center font-[600] mt-[54px] text-lg ">
+        <h3 className="secondDiv text-primary-0 text-center font-[600] mt-[54px] text-lg ">
           Languages
         </h3>
         <div className="grid secondLowerDiv max-lg:grid-cols-2 w-full grid-cols-3 max-lg:gap-y-[64px] mt-[48px] lg:space-x-[106px]">
@@ -136,12 +136,12 @@ function SkillSec1() {
       {/* {RIGHT SIDE} */}
       <div className=" max-lg:mt-[64px] p- flex flex-col items-center">
         <div className="BackDiv flex flex-col  items-center">
-          <img className="w-[48px] text-[#FFB809]" src="icons/backend.svg" />
+          <img className="w-[48px] text-primary-0" src="icons/backend.svg" />
           <h2 className=" font-[700] text-white mt-4 text-[28px]">
             Backend Dev
           </h2>
         </div>
-        <span className="BackDiv text-[#FFB809] font-[600]  mt-[44px] text-lg ">
+        <span className="BackDiv text-primary-0 font-[600]  mt-[44px] text-lg ">
           Frameworks & Runtime
         </span>
 
@@ -175,7 +175,7 @@ function SkillSec1() {
             <h3 className=" text-[#808080] text-[21px]">Spring boot</h3>
           </div>
         </div>
-        <h3 className="secondDiv text-center text-[#FFB809] font-[600] mt-[48px] text-lg ">
+        <h3 className="secondDiv text-center text-primary-0 font-[600] mt-[48px] text-lg ">
           Languages
         </h3>
         <div
@@ -260,7 +260,7 @@ function SkillSec2() {
           src="/icons/database.svg"
           alt="Database svg icon"
         />
-        <h2 className=" text-[28px] font-[700] text-[#FFB809]">Libraries</h2>
+        <h2 className=" text-[28px] font-[700] text-primary-0">Libraries</h2>
 
         <div
           className="grid gap-y-[64px] max-lg:gap-x-[64px] 
@@ -375,7 +375,7 @@ function SkillSec3() {
               src="/icons/database.svg"
               alt="Database svg icon"
             />
-            <h2 className="text-[28px] font-[700] text-[#FFB809]">Databases</h2>
+            <h2 className="text-[28px] font-[700] text-primary-0">Databases</h2>
           </div>
           <div
             className="grid gap-y-[64px] :gap-x-[64px]
@@ -431,7 +431,7 @@ function SkillSec3() {
               src="/icons/git.svg"
               alt="git svg icon"
             />
-            <h2 className=" text-[28px] font-[700] text-[#FFB809]">
+            <h2 className=" text-[28px] font-[700] text-primary-0">
               Infrastructre
             </h2>
           </div>
@@ -551,7 +551,7 @@ function SkillSec4() {
               src="/icons/cloud.svg"
               alt="cloud svg icon"
             />
-            <h3 className=" text-[28px] text-[#FFB809] font-[700]">Hosting</h3>
+            <h3 className=" text-[28px] text-primary-0 font-[700]">Hosting</h3>
           </div>{" "}
           <div
             className="w-fit flex flex-col items-center text-center
@@ -607,7 +607,10 @@ function SkillSec4() {
 
 export const SkillsSection = () => {
   return (
-    <section className="xl:w-[1496px]  mx-auto lg:w-[1028px] md:w-[960px]">
+    <section
+      id="skill-section"
+      className="xl:w-[1496px] max-lg:mt-[326px]  mx-auto lg:w-[1028px] md:w-[960px]"
+    >
       <h2 className=" text-[48px] text-white font-bold text-center">Skills</h2>
       <SkillSec1 />
       <SkillSec2 />

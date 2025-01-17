@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import Zoom from "react-medium-image-zoom";
 
 const images = [
-  "public/images/codegoda.webp",
-  "public/images/codegoda.webp",
-  "public/images/codegoda.webp",
-  "public/images/codegoda.webp",
+  "public/Certs/C++ cert.jpg",
+  "public/Certs/JP Morgan.jpg",
+  "public/Certs/JS Cert.jpg",
+  "public/Certs/Python certs.jpg",
+  "public/Certs/Python certs.jpg",
+  "public/Certs/Python certs.jpg",
 ];
 export const Certificate = () => {
   const [zoomIn, setZoomIn] = useState<React.SetStateAction<boolean>>(false);
@@ -15,9 +16,13 @@ export const Certificate = () => {
     setZoomIn(!zoomIn);
   }
   return (
-    <section className="xl:w-[1496px] mt-[64px] relative mx-auto lg:w-[1028px] md:w-[960px]">
+    <section
+      id="certs"
+      className="xl:w-[1496px] mt-[64px] relative z-20
+    mx-auto lg:w-[1028px] md:w-[960px]"
+    >
       <div className="w-full px-9">
-        <div className="grid grid-cols-4 gap-[48px]">
+        <div className="grid grid-cols-4 max-md:grid-cols-2 max-lg:grid-cols-3 gap-[48px]">
           {images.map((imgSrc: string, index: number) => {
             return (
               <div
@@ -34,20 +39,26 @@ export const Certificate = () => {
         </div>
       </div>
       {zoomIn && (
-        <div className="w-full h-screen fixed top-0 left-0 bottom-0 right-0 overflow-hidden bg-[#33333386]">
-          <div className="absolute top-[15%] left-[25%]">
-            <Zoom>
-              <img src={`${string}`} />
-            </Zoom>
-          </div>
+        <div
+          className="w-full h-screen 
+         fixed top-0 left-0 bottom-0 right-0 overflow-hidden bg-[#33333386]"
+        >
+          <div className="">
+            <div className="absolute top-0 p-9 left-[20%] max-lg:top-[20%] max-lg:left-[20%]  max-md:top-[30%] max-md:left-0 ">
+              <img
+                className="w-3/4  max-md:w-full max-md:h-full  "
+                src={`${string}`}
+              />
+            </div>
 
-          <div
-            onClick={() => {
-              setZoomIn(!zoomIn);
-            }}
-            className="absolute cursor-pointer top-0 right-0 m-[48px]"
-          >
-            <img className=" w-[58px]" src="/icons/cross.svg" />
+            <div
+              onClick={() => {
+                setZoomIn(!zoomIn);
+              }}
+              className="absolute cursor-pointer top-0 right-0 m-[48px]"
+            >
+              <img className=" w-[58px]" src="/icons/cross.svg" />
+            </div>
           </div>
         </div>
       )}

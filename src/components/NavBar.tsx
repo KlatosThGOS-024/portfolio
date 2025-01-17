@@ -6,7 +6,7 @@ function MenuBar() {
     <div className="w-full">
       <div className=" absolute left-0 my-3 w-full  text-[20px] bg-[#1A1522] text-[#fff]">
         <ul className="grid grid-cols-2 px-6 space-y-7 ">
-          <li className="hover:text-[#FFB809] -mb-5  w-fit flex gap-5 items-center  transition-all duration-300 transform-origin-center leading-none">
+          <li className="hover:text-primary-0 -mb-5  w-fit flex gap-5 items-center  transition-all duration-300 transform-origin-center leading-none">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -24,7 +24,7 @@ function MenuBar() {
             </svg>
             <span className=" group-hover:">Skills</span>
           </li>
-          <li className="hover:text-[#FFB809]  w-fit  flex gap-5 items-center  transition-all duration-300 transform-origin-center leading-none">
+          <li className="hover:text-primary-0  w-fit  flex gap-5 items-center  transition-all duration-300 transform-origin-center leading-none">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -42,8 +42,7 @@ function MenuBar() {
             </svg>
             <span>Experience</span>
           </li>
-
-          <li className="hover:text-[#FFB809]  w-fit  flex gap-5 items-center  transition-all duration-300 transform-origin-center leading-none">
+          <li className="hover:text-primary-0  w-fit  flex gap-5 items-center  transition-all duration-300 transform-origin-center leading-none">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -61,7 +60,7 @@ function MenuBar() {
             </svg>
             <span>Education</span>
           </li>
-          <li className="hover:text-[#FFB809]  w-fit  flex gap-5 items-center  transition-all duration-300 transform-origin-center leading-none">
+          <li className="hover:text-primary-0  w-fit  flex gap-5 items-center  transition-all duration-300 transform-origin-center leading-none">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -79,7 +78,26 @@ function MenuBar() {
             </svg>{" "}
             <span>Certs</span>
           </li>
-          <li className="hover:text-[#FFB809]  w-fit  flex gap-5 items-center  transition-all duration-300 transform-origin-center leading-none">
+          <li className="hover:text-primary-0  w-fit  flex gap-5 items-center  transition-all duration-300 transform-origin-center leading-none">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="certificate"
+              className="svg-inline--fa fa-certificate w-6"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M211 7.3C205 1 196-1.4 187.6 .8s-14.9 8.9-17.1 17.3L154.7 80.6l-62-17.5c-8.4-2.4-17.4 0-23.5 6.1s-8.5 15.1-6.1 23.5l17.5 62L18.1 170.6c-8.4 2.1-15 8.7-17.3 17.1S1 205 7.3 211l46.2 45L7.3 301C1 307-1.4 316 .8 324.4s8.9 14.9 17.3 17.1l62.5 15.8-17.5 62c-2.4 8.4 0 17.4 6.1 23.5s15.1 8.5 23.5 6.1l62-17.5 15.8 62.5c2.1 8.4 8.7 15 17.1 17.3s17.3-.2 23.4-6.4l45-46.2 45 46.2c6.1 6.2 15 8.7 23.4 6.4s14.9-8.9 17.1-17.3l15.8-62.5 62 17.5c8.4 2.4 17.4 0 23.5-6.1s8.5-15.1 6.1-23.5l-17.5-62 62.5-15.8c8.4-2.1 15-8.7 17.3-17.1s-.2-17.4-6.4-23.4l-46.2-45 46.2-45c6.2-6.1 8.7-15 6.4-23.4s-8.9-14.9-17.3-17.1l-62.5-15.8 17.5-62c2.4-8.4 0-17.4-6.1-23.5s-15.1-8.5-23.5-6.1l-62 17.5L341.4 18.1c-2.1-8.4-8.7-15-17.1-17.3S307 1 301 7.3L256 53.5 211 7.3z"
+              ></path>
+            </svg>
+
+            <span>Certificates</span>
+          </li>
+          <li className="hover:text-primary-0  w-fit  flex gap-5 items-center  transition-all duration-300 transform-origin-center leading-none">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -100,7 +118,7 @@ function MenuBar() {
         </ul>
         <hr className="border-t-4 border-gray-300 my-4"></hr>
 
-        <div className=" my-3 text-center text-[#FFB809] space-x-6 text-[24px]">
+        <div className=" my-3 text-center text-primary-0 space-x-6 text-[24px]">
           <span>Visitors</span>
           <span>Views</span>
         </div>
@@ -111,20 +129,40 @@ function MenuBar() {
 
 export default function NavBar() {
   const [isOpen, setOpen] = useState<React.SetStateAction<boolean>>(false);
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const targetId = e.currentTarget.getAttribute("href")?.substring(1);
+
+    if (targetId) {
+      const targetEle = document.getElementById(targetId);
+
+      if (targetEle) {
+        targetEle.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    } else {
+      console.error("Target ID is undefined");
+    }
+  };
+
   return (
-    <nav className="bg-[#19151F] w-full relative">
-      <div className="flex py-4  px-6 text-[20px] justify-between  items-center text-[#FFFFFF]">
+    <nav className="bg-[#19151F] w-full sticky top-0 z-30 left-0  ">
+      <div className="flex py-4 px-6 text-[20px] justify-between items-center text-[#FFFFFF]">
         <h2 className="text-[28px] font-[700] ml-9">
-          PRIYANSHU.<span className="text-[#FFB809]">DEV</span>
+          PRIYANSHU.<span className="text-primary-0">DEV</span>
         </h2>
         <ul className="flex gap-[64px] max-lg:hidden">
-          <li className="group w-fit relative flex gap-2 items-center hover:scale-110 transition-all duration-300 transform-origin-center leading-none">
+          <li
+            className="group w-fit relative flex gap-2 items-center
+           hover:scale-110 transition-all duration-300 transform-origin-center leading-none"
+          >
             <svg
               aria-hidden="true"
               focusable="false"
               data-prefix="fas"
               data-icon="lightbulb"
-              className="w-4 group-hover:-translate-x-[48px] transition-all duration-500 group-hover:text-[#FFB809] ease-in-out"
+              className="w-4 group-hover:-translate-x-[48px] transition-all duration-500 group-hover:text-primary-0 ease-in-out"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 384 512"
@@ -136,10 +174,12 @@ export default function NavBar() {
             </svg>
 
             <p
-              className="group-hover:-translate-x-6 absolute group-hover:text-[#FFB809]  transition-all opacity-0 
+              className="group-hover:-translate-x-6 absolute group-hover:text-primary-0  transition-all opacity-0 
            duration-500 ease-in-out group-hover:opacity-100"
             >
-              Skills
+              <a onClick={scrollToSection} href="#skill-section">
+                Skills
+              </a>
             </p>
           </li>
           <li className="group w-fit relative  flex items-center hover:scale-110 transition-all duration-300 transform-origin-center leading-none">
@@ -149,7 +189,7 @@ export default function NavBar() {
               data-prefix="fas"
               data-icon="rocket"
               className="w-4  group-hover:-translate-x-[48px] transition-all 
-           duration-500 group-hover:text-[#FFB809] ease-in-out"
+           duration-500 group-hover:text-primary-0 ease-in-out"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
@@ -161,10 +201,13 @@ export default function NavBar() {
             </svg>
 
             <p
-              className="group-hover:-translate-x-6 absolute group-hover:text-[#FFB809]  transition-all opacity-0 
+              className="group-hover:-translate-x-6 absolute group-hover:text-primary-0  transition-all opacity-0 
            duration-500 ease-in-out group-hover:opacity-100"
             >
-              Experience
+              {" "}
+              <a onClick={scrollToSection} href="#experience">
+                Experience
+              </a>
             </p>
           </li>
           <li className="group w-fit relative flex space-x-4 items-center hover:scale-110 transition-all duration-300 transform-origin-center leading-none">
@@ -176,7 +219,7 @@ export default function NavBar() {
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 245.827 245.827"
               className="  group-hover:-translate-x-[48px] transition-all 
-              duration-500 group-hover:text-[#FFB809] ease-in-out"
+              duration-500 group-hover:text-primary-0 ease-in-out"
             >
               <g>
                 <g>
@@ -199,10 +242,38 @@ export default function NavBar() {
               </g>
             </svg>
             <p
-              className="group-hover:-translate-x-6 absolute group-hover:text-[#FFB809]  transition-all opacity-0 
+              className="group-hover:-translate-x-6 absolute group-hover:text-primary-0  transition-all opacity-0 
            duration-500 ease-in-out group-hover:opacity-100"
             >
-              Education
+              <a onClick={scrollToSection} href="#education">
+                Education
+              </a>
+            </p>
+          </li>
+          <li className="group w-fit relative flex space-x-4 items-center hover:scale-110 transition-all duration-300 transform-origin-center leading-none">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="certificate"
+              className="group-hover:-translate-x-[48px] transition-all 
+              duration-500 group-hover:text-primary-0 ease-in-out w-5 mr-3"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="currentColor"
+                d="M211 7.3C205 1 196-1.4 187.6 .8s-14.9 8.9-17.1 17.3L154.7 80.6l-62-17.5c-8.4-2.4-17.4 0-23.5 6.1s-8.5 15.1-6.1 23.5l17.5 62L18.1 170.6c-8.4 2.1-15 8.7-17.3 17.1S1 205 7.3 211l46.2 45L7.3 301C1 307-1.4 316 .8 324.4s8.9 14.9 17.3 17.1l62.5 15.8-17.5 62c-2.4 8.4 0 17.4 6.1 23.5s15.1 8.5 23.5 6.1l62-17.5 15.8 62.5c2.1 8.4 8.7 15 17.1 17.3s17.3-.2 23.4-6.4l45-46.2 45 46.2c6.1 6.2 15 8.7 23.4 6.4s14.9-8.9 17.1-17.3l15.8-62.5 62 17.5c8.4 2.4 17.4 0 23.5-6.1s8.5-15.1 6.1-23.5l-17.5-62 62.5-15.8c8.4-2.1 15-8.7 17.3-17.1s-.2-17.4-6.4-23.4l-46.2-45 46.2-45c6.2-6.1 8.7-15 6.4-23.4s-8.9-14.9-17.3-17.1l-62.5-15.8 17.5-62c2.4-8.4 0-17.4-6.1-23.5s-15.1-8.5-23.5-6.1l-62 17.5L341.4 18.1c-2.1-8.4-8.7-15-17.1-17.3S307 1 301 7.3L256 53.5 211 7.3z"
+              ></path>
+            </svg>
+            <p
+              className="group-hover:-translate-x-6 absolute group-hover:text-primary-0  transition-all opacity-0 
+           duration-500 ease-in-out group-hover:opacity-100"
+            >
+              <a onClick={scrollToSection} href="#certs">
+                Certificate
+              </a>
             </p>
           </li>
           <li className="group w-fit relative  flex gap-2 items-center hover:scale-110 transition-all duration-300 transform-origin-center leading-none">
@@ -212,7 +283,7 @@ export default function NavBar() {
               data-prefix="fas"
               data-icon="briefcase"
               className="w-4  group-hover:-translate-x-[48px] transition-all 
-           duration-500 group-hover:text-[#FFB809] ease-in-out"
+           duration-500 group-hover:text-primary-0 ease-in-out"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
@@ -223,10 +294,12 @@ export default function NavBar() {
               ></path>
             </svg>
             <p
-              className="group-hover:-translate-x-6 absolute group-hover:text-[#FFB809]  transition-all opacity-0 
+              className="group-hover:-translate-x-6 absolute group-hover:text-primary-0  transition-all opacity-0 
            duration-500 ease-in-out group-hover:opacity-100"
             >
-              Works
+              <a onClick={scrollToSection} href="#works">
+                Works
+              </a>
             </p>
           </li>
           <li className="group w-fit relative  flex gap-2 items-center hover:scale-110 transition-all duration-300 transform-origin-center leading-none">
@@ -236,7 +309,7 @@ export default function NavBar() {
               data-prefix="fas"
               data-icon="envelope"
               className="w-4  group-hover:-translate-x-[48px] transition-all 
-           duration-500 group-hover:text-[#FFB809] ease-in-out"
+           duration-500 group-hover:text-primary-0 ease-in-out"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
             >
@@ -246,10 +319,12 @@ export default function NavBar() {
               ></path>
             </svg>
             <p
-              className="group-hover:-translate-x-6 absolute group-hover:text-[#FFB809]  transition-all opacity-0 
+              className="group-hover:-translate-x-6 absolute group-hover:text-primary-0  transition-all opacity-0 
            duration-500 ease-in-out group-hover:opacity-100"
             >
-              Contact
+              <a onClick={scrollToSection} href="#contact">
+                Contact
+              </a>
             </p>
           </li>
         </ul>
@@ -272,7 +347,7 @@ export default function NavBar() {
 
           <button
             className=" flex  gap-3 justify-center items-center 
-          max-lg:hidden hover:text-[#FFB809] transition-all 
+          max-lg:hidden hover:text-primary-0 transition-all 
           duration-300 transform-origin-center leading-none"
           >
             <p>Download Resume </p>

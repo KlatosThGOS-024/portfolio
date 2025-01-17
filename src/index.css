@@ -6,3 +6,6 @@
   fill: #fff;
   display: absolute;
 }
+html {
+  scroll-behavior: smooth;
+}

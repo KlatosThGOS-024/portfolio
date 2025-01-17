@@ -1,66 +1,6 @@
-import gsap from "gsap";
-import { TextPlugin } from "gsap/TextPlugin";
-import { useGSAP } from "@gsap/react";
-
-// gsap.registerPlugin(TextPlugin);
-
-// const Component = () => {
-//   const words = ["Fullstack Developer", "Software Developer", "Pentester"];
-//   useGSAP(() => {
-//     gsap.to(".cursor", {
-//       opacity: 0,
-//       repeat: -1,
-//       ease: "power2.inOut",
-//     });
-//   });
-//   const boxTl = gsap.timeline();
-//   boxTl
-//     .to(".box", {
-//       duration: 1,
-
-//       delay: 0.5,
-//       ease: "power4.inOut",
-//     })
-//     .from(".hi", { duration: 1, y: "7vw", ease: "power3.out" })
-//     .to(".box", {
-//       duration: 1,
-//       height: "7vw",
-//       ease: "elastic.out",
-//       onComplete: () => {
-//         masterTl.play();
-//       },
-//     })
-//     .to(".box", {
-//       duration: 2,
-//       autoAlpha: 0.7,
-//       yoyo: true,
-//       repeat: -1,
-//       ease: "rough({ template: none.out, strength:  1, points: 20, taper: 'none', randomize: true, clamp: false})",
-//     });
-
-//   const masterTl = gsap.timeline({ repeat: -1 }).pause();
-//   words.forEach((word) => {
-//     const tl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
-//     tl.to(".text", {
-//       duration: 1,
-//       text: word,
-//     });
-//     masterTl.add(tl);
-//   });
-//   return (
-//     <div>
-//       <br></br>
-//       <span className="box"></span>
-//       <span className="hi">Hi</span>
-//       <span className="text"></span>
-//       <span className="cursor">_</span>
-//     </div>
-//   );
-// };
-
 export const HeroSection = () => {
   return (
-    <section className="mt-[128px] px-[32px]  h-screen">
+    <section id="heroSection" className="mt-[128px] px-[32px]  h-screen">
       <div className=" w-full xl:w-full lg:w-[1028px] md:w-[960px] mx-auto">
         <div
           className="px-[96px] max-lg:p-3 max-lg:flex-col-reverse items-center justify-center
@@ -68,7 +8,7 @@ export const HeroSection = () => {
         >
           <div className="leftSide px-[28px] max-lg:space-y-[28px]">
             <h2 className=" max-lg:mt-[58px] max-lg:text-[38px] text-[64px] font-semibold">
-              Hi there<span className=" text-[#FFB809]">!</span>
+              Hi there<span className=" text-primary-0">!</span>
             </h2>
             <div className=" flex gap-6 ">
               <span className="h-0.5 w-16 mt-3 bg-black dark:bg-white hidden md:block"></span>
@@ -85,7 +25,7 @@ export const HeroSection = () => {
                 corporis ducimus!"
               </span>
               <div className="flex gap-[64px]">
-                <span className=" bg-[#424242] p-3 rounded-full hover:text-[#FFB809]">
+                <span className=" bg-[#424242] p-3 rounded-full hover:text-primary-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="35px"
@@ -102,7 +42,7 @@ export const HeroSection = () => {
                     <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
                   </svg>
                 </span>
-                <span className=" bg-[#424242] p-3 rounded-full hover:text-[#FFB809]">
+                <span className=" bg-[#424242] p-3 rounded-full hover:text-primary-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="35px"
@@ -123,7 +63,7 @@ export const HeroSection = () => {
                     <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
                   </svg>{" "}
                 </span>
-                <span className=" bg-[#424242] p-3 rounded-full hover:text-[#FFB809]">
+                <span className=" bg-[#424242] p-3 rounded-full hover:text-primary-0">
                   {" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -144,8 +84,8 @@ export const HeroSection = () => {
               </div>
 
               <button
-                className="group flex items-center gap-3 bg-[#FFB809] 
-                hover:scale-110 transition-all font-[600] duration-500 
+                className="group flex items-center gap-3 bg-primary-0 
+                hover:scale-110 transition-all font-[700] duration-500 
                 ease-in-out text-black  text-[21px]
                px-[26px] py-2 rounded-xl"
               >
@@ -178,7 +118,7 @@ export const HeroSection = () => {
             <p className="text-gray-600 mt-4 text-center text-[21px]">
               @priyanshu.dev
             </p>{" "}
-            <p className="text-[#FFB809] mt-4 text-center text-[21px]">
+            <p className="text-primary-0 mt-4 text-center text-[21px]">
               Full stack Developer
             </p>
           </div>
