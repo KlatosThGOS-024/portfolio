@@ -111,7 +111,7 @@ export const HeroSection = () => {
             </div>
           </div>
           <div className="rightSide  max-lg:w-1/2">
-            <img src="../../public/images/dev.png" />
+            <img src="../../images/dev.png" />
             <p className=" font-[700] mt-4 text-[28px] text-center ">
               Priyanshu Tiwari
             </p>

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 const images = [
-  "public/Certs/C++ cert.jpg",
-  "public/Certs/JP Morgan.jpg",
-  "public/Certs/JS Cert.jpg",
-  "public/Certs/Python certs.jpg",
-  "public/Certs/Python certs.jpg",
-  "public/Certs/Python certs.jpg",
+  "/Certs/C++ cert.jpg",
+  "/Certs/JP Morgan.jpg",
+  "/Certs/JS Cert.jpg",
+  "/Certs/Python certs.jpg",
+  "/Certs/Python certs.jpg",
+  "/Certs/Python certs.jpg",
 ];
 export const Certificate = () => {
   const [zoomIn, setZoomIn] = useState<React.SetStateAction<boolean>>(false);

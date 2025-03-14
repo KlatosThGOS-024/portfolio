@@ -71,7 +71,7 @@ function SkillSec1() {
       {/* {LEFT SIDE} */}
       <div>
         <div className="frontDiv flex flex-col items-center">
-          <img className="w-[48px]" src="public\icons\frontend.svg" />
+          <img className="w-[48px]" src="\icons\frontend.svg" />
           <h2 className="font-[700] text-white mt-4 text-[28px]">
             Frontend Dev
           </h2>
@@ -102,7 +102,7 @@ function SkillSec1() {
           <div className=" space-y-6 flex flex-col items-center">
             <img
               className="hover:fill-[#fff] hover:scale-150 transition  duration-500 ease-in-out"
-              src="public\icons\flutter.svg"
+              src="\icons\flutter.svg"
             />
             <h3 className=" text-[#808080] text-[21px]">Flutter</h3>
           </div>
@@ -114,7 +114,7 @@ function SkillSec1() {
         <div className="grid secondLowerDiv max-lg:grid-cols-2 w-full grid-cols-3 max-lg:gap-y-[64px] mt-[48px] lg:space-x-[106px]">
           <div className=" space-y-6 flex flex-col items-center">
             <img
-              src="public\icons\html.svg"
+              src="\icons\html.svg"
               alt="html icon"
               className=" hover:scale-150 transition  duration-500 ease-in-out"
             />
