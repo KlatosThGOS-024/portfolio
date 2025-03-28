@@ -1,5 +1,36 @@
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+const SkillItem = ({
+  src,
+  name,
+}: {
+  src: any;
+  name: any;
+  width: number;
+  height: number;
+}) => (
+  <div
+    className="space-y-7 flex flex-col 
+  items-center"
+  >
+    <img
+      src={src}
+      alt={name}
+      className="hover:scale-150 transition w-[64px]
+       duration-500 ease-in-out"
+    />
+    <h3
+      className="text-[#808080] whitespace-nowrap
+     text-[21px]"
+    >
+      {name}
+    </h3>
+  </div>
+);
 
 function SkillSec1() {
   useGSAP(() => {
@@ -49,6 +80,7 @@ function SkillSec1() {
         scroller: ".main-scroller",
       },
     });
+
     gsap.from(".secondLowerDiv", {
       y: 200,
       opacity: 0,
@@ -66,172 +98,139 @@ function SkillSec1() {
     });
   });
 
+  const frontendFrameworks = [
+    { src: "/images/image/Next.js.png", name: "Next.js" },
+    { src: "/icons/django-svgrepo-com.svg", name: "Django" },
+  ];
+
+  const frontendLanguages = [
+    { src: "/images/image/HTML5.png", name: "HTML" },
+    { src: "/images/image/CSS3.png", name: "CSS" },
+    { src: "/images/image/Tailwind CSS.png", name: "Tailwind CSS" },
+  ];
+
+  const backendFrameworks = [
+    { src: "/images/image/Node.js.png", name: "Node.js" },
+    { src: "/images/image/icons8-express-js-50.png", name: "Express.js" },
+  ];
+  const backendLanguages = [
+    {
+      src: "/images/image/TypeScript.png",
+      name: "TypeScript",
+    },
+    {
+      src: "/images/image/JavaScript.png",
+      name: "JavaScript",
+    },
+    { src: "/images/image/Python.png", name: "Python" },
+    { src: "/images/image/C++ (CPlusPlus).png", name: "C++" },
+  ];
+
   return (
-    <div className=" p-[64px] lg:flex mt-[64px]  ">
-      {/* {LEFT SIDE} */}
+    <div className="p-[64px] lg:flex mt-[64px]">
       <div>
         <div className="frontDiv flex flex-col items-center">
-          <img className="w-[48px]" src="\icons\frontend.svg" />
+          <img className="w-[48px]" src="\icons\frontend.svg" alt="Frontend" />
           <h2 className="font-[700] text-white mt-4 text-[28px]">
             Frontend Dev
           </h2>
         </div>
-        <h3 className="frontDiv text-primary-0 text-center font-[600] mt-[44px] text-lg ">
+
+        <h3 className="frontDiv text-primary-0 text-center font-[600] mt-[44px] text-lg">
           Frameworks & Runtime
         </h3>
-        <div
-          className="grid firstUpperDiv max-lg:grid-cols-2 lg:grid-cols-3 
-         mt-[48px] max-lg:gap-y-[64px] lg:space-x-[106px]"
-        >
-          <div className=" space-y-6 flex flex-col items-center">
-            <img
-              className="hover:scale-150 transition duration-500 ease-in-out"
-              src="/icons/nextjs.svg"
-              alt="Next.js Icon"
-            />
 
-            <h3 className=" text-[#808080] text-[21px]">Next.js</h3>
-          </div>
-          <div className=" space-y-6 flex flex-col items-center">
-            <img
-              src="/icons/nuxtjs.svg"
-              className="hover:fill-[#fff] hover:scale-150 transition  duration-500 ease-in-out"
+        <div className="grid firstUpperDiv max-lg:grid-cols-2 lg:grid-cols-2 mt-[48px] max-lg:gap-y-[64px] lg:space-x-[106px]">
+          {frontendFrameworks.map((framework, index) => (
+            <SkillItem
+              key={index}
+              src={framework.src}
+              name={framework.name}
+              width={0}
+              height={0}
             />
-            <h3 className=" text-[#808080] text-[21px]">Nuxt.js</h3>
-          </div>
-          <div className=" space-y-6 flex flex-col items-center">
-            <img
-              className="hover:fill-[#fff] hover:scale-150 transition  duration-500 ease-in-out"
-              src="\icons\flutter.svg"
-            />
-            <h3 className=" text-[#808080] text-[21px]">Flutter</h3>
-          </div>
+          ))}
         </div>
-        {/* {LANGUAGES} */}
-        <h3 className="secondDiv text-primary-0 text-center font-[600] mt-[54px] text-lg ">
+
+        <h3 className="secondDiv text-primary-0 text-center font-[600] mt-[54px] text-lg">
           Languages
         </h3>
+
         <div className="grid secondLowerDiv max-lg:grid-cols-2 w-full grid-cols-3 max-lg:gap-y-[64px] mt-[48px] lg:space-x-[106px]">
-          <div className=" space-y-6 flex flex-col items-center">
-            <img
-              src="\icons\html.svg"
-              alt="html icon"
-              className=" hover:scale-150 transition  duration-500 ease-in-out"
+          {frontendLanguages.map((language, index) => (
+            <SkillItem
+              key={index}
+              src={language.src}
+              name={language.name}
+              width={0}
+              height={0}
             />
-            <h3 className=" text-[#808080] text-[21px]">HTML</h3>
-          </div>
-          <div className=" space-y-6 flex flex-col items-center">
-            <img
-              src="icons/css.svg"
-              alt="html icon"
-              className=" hover:scale-150 transition  duration-500 ease-in-out"
-            />
-            <h3 className=" text-[#808080] text-[21px]">CSS</h3>
-          </div>
+          ))}
         </div>
       </div>
-      {/* {BORDERLINE} */}
-      <div className="BackDiv border-l-2 max-lg:hidden ml-[132px] border-line border-gray-300  h-[828px] "></div>
-      {/* {BACKEND} */}
-      {/* {RIGHT SIDE} */}
-      <div className=" max-lg:mt-[64px] p- flex flex-col items-center">
-        <div className="BackDiv flex flex-col  items-center">
-          <img className="w-[48px] text-primary-0" src="icons/backend.svg" />
-          <h2 className=" font-[700] text-white mt-4 text-[28px]">
+
+      <div className="BackDiv border-l-2 max-lg:hidden ml-[132px] border-line border-gray-300 h-[828px]"></div>
+
+      <div className="max-lg:mt-[64px] flex flex-col items-center">
+        <div className="BackDiv flex flex-col items-center">
+          <img
+            className="w-[48px] text-primary-0"
+            src="icons/backend.svg"
+            alt="Backend"
+          />
+          <h2 className="font-[700] text-white mt-4 text-[28px]">
             Backend Dev
           </h2>
         </div>
-        <span className="BackDiv text-primary-0 font-[600]  mt-[44px] text-lg ">
+
+        <span className="BackDiv text-primary-0 font-[600] mt-[44px] text-lg">
           Frameworks & Runtime
         </span>
 
-        <div
-          className="grid firstUpperDiv w-full max-lg:grid-cols-2 grid-cols-3 
-          mt-[48px] max-lg:gap-x-[96px] max-lg:gap-y-[64px] 
-          lg:space-x-[106px]"
-        >
-          <div className=" space-y-6 flex flex-col items-center">
-            <img
-              className="w-[45px] h-[45px] hover:scale-150 transition  duration-500 ease-in-out"
-              src="icons/node-js.svg"
+        <div className="grid firstUpperDiv w-full max-lg:grid-cols-2 grid-cols-3 mt-[48px] max-lg:gap-x-[96px] max-lg:gap-y-[64px] lg:space-x-[106px]">
+          {backendFrameworks.map((framework, index) => (
+            <SkillItem
+              key={index}
+              src={framework.src}
+              name={framework.name}
+              width={0}
+              height={0}
             />
-            <h3 className=" text-[#808080] text-[21px]">Node.js</h3>
-          </div>
-          <div className=" space-y-6 flex flex-col items-center">
-            <img
-              className="w-[45px] h-[45px] hover:scale-150 transition  duration-500 ease-in-out"
-              src="icons/express-js-icon.svg"
-            />
-            <h3 className=" text-[#808080] text-[21px]">Express.js</h3>
-          </div>
-          <div className=" space-y-6 flex flex-col items-center">
-            <img
-              width="45px"
-              height="45px"
-              className="w-[45px] h-[45px] hover:scale-150 transition  duration-500 ease-in-out"
-              src="icons/icons8-spring-boot.svg"
-            />
-
-            <h3 className=" text-[#808080] text-[21px]">Spring boot</h3>
-          </div>
+          ))}
         </div>
-        <h3 className="secondDiv text-center text-primary-0 font-[600] mt-[48px] text-lg ">
+
+        <h3 className="secondDiv text-center text-primary-0 font-[600] mt-[48px] text-lg">
           Languages
         </h3>
-        <div
-          className="grid gap-y-[64px] secondLowerDiv
-        max-lg:grid-cols-2 w-full lg:grid-cols-3 mt-[48px] 
-        "
-        >
-          <div className=" space-y-6 flex flex-col items-center">
-            <img
-              width="45px"
-              height="45px"
-              className="w-[45px] h-[45px] hover:scale-150 transition  duration-500 ease-in-out"
-              src="icons/typescript-svgrepo-com.svg"
-            />
-            <h3 className=" text-[#808080] text-[21px]">Typescript</h3>
-          </div>
-          <div className=" space-y-6 flex flex-col items-center">
-            <img
-              className="hover:scale-150 transition  duration-500 ease-in-out"
-              src="icons/icons8-javascript.svg"
-            />
-            <h3 className=" text-[#808080] text-[21px]">Javascript</h3>
-          </div>
-          <div className=" space-y-6 flex flex-col items-center">
-            <img
-              width="55px"
-              height="55px"
-              className="hover:scale-150  transition  duration-500 ease-in-out"
-              src="icons/python-svgrepo-com.svg"
-            />
 
-            <h3 className=" text-[#808080] text-[21px]">Python</h3>
-          </div>
-          <div className="  space-y-6 flex flex-col items-center">
-            <img
-              width="45px"
-              height="45px"
-              className="hover:scale-150 transition  duration-500 ease-in-out"
-              src="icons/c.svg"
+        <div className="grid gap-y-[64px] secondLowerDiv max-lg:grid-cols-2 w-full lg:grid-cols-3 mt-[48px]">
+          {backendLanguages.map((language, index) => (
+            <SkillItem
+              key={index}
+              src={language.src}
+              name={language.name}
+              width={0}
+              height={0}
             />
-            <h3 className=" text-[#808080] text-[21px]">C++</h3>
-          </div>
-          <div className=" space-y-6 flex flex-col items-center">
-            <img
-              width="45px"
-              height="45px"
-              className="hover:scale-150 transition  duration-500 ease-in-out"
-              src="icons/c.svg"
-            />
-            <h3 className=" text-[#808080] text-[21px]">C#</h3>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   );
 }
+//@ts-ignore
+const LibraryItem = ({ src, name, width = 55, height = 55, alt }) => (
+  <div
+    className="flex flex-col items-center text-center space-y-3 
+    transition ease-in-out duration-500 text-customGrayHeavy
+    dark:text-[#AAAAAA] hover:scale-125 hover:text-black
+    dark:hover:text-white"
+  >
+    <img width={width} height={height} src={src} alt={alt || name} />
+    <span>{name}</span>
+  </div>
+);
+
 function SkillSec2() {
   useGSAP(() => {
     gsap.from(".library", {
@@ -251,8 +250,30 @@ function SkillSec2() {
     });
   });
 
+  const libraries = [
+    {
+      src: "/images/image/React.png",
+      name: "React.js",
+      alt: "React.js icon",
+    },
+    {
+      src: "/images/image/JSON.png",
+      name: "JSON WEB TOKEN",
+      alt: "JSON Web Token icon",
+    },
+    {
+      src: "/images/image/prisma-removebg-preview.png",
+      name: "Prisma",
+      alt: "Prisma icon",
+    },
+  ];
+  // const libraries3 = [
+  //   { src: "/images/image/HTML5.png", name: "HTML" },
+  //   { src: "/images/image/CSS3.png", name: "CSS" },
+  //   { src: "/images/image/Tailwind CSS.png", name: "Tailwind CSS" },
+  // ];
   return (
-    <div className=" border border-b-0 border-x-0 border-t-[2px] border-t-[#69666c] p-[38px]">
+    <div className="border border-b-0 border-x-0 border-t-[2px] border-t-[#69666c] p-[38px]">
       <div className="library py-[72px] flex flex-col items-center">
         <img
           width="45px"
@@ -260,77 +281,48 @@ function SkillSec2() {
           src="/icons/database.svg"
           alt="Database svg icon"
         />
-        <h2 className=" text-[28px] font-[700] text-primary-0">Libraries</h2>
+        <h2 className="text-[28px] font-[700] text-primary-0">Libraries</h2>
 
         <div
           className="grid gap-y-[64px] max-lg:gap-x-[64px] 
-        max-lg:grid-cols-3 w-full grid-cols-3 p-[48px]  mt-[48px] 
-      "
+          max-lg:grid-cols-3 w-full grid-cols-3 p-[48px] mt-[48px]"
         >
-          <div
-            className=" flex flex-col items-center text-center space-y-3 
-            transition ease-in-out duration-500 text-customGrayHeavy
-             dark:text-[#AAAAAA] hover:scale-125 hover:text-black
-              dark:hover:text-white "
-          >
-            <img
-              width="55px"
-              height="55px"
-              src="/icons/react.svg"
-              alt="Database svg icon"
+          {libraries.map((library, index) => (
+            <LibraryItem
+              key={index}
+              src={library.src}
+              name={library.name}
+              alt={library.alt}
             />
-            <span>React.js</span>
-          </div>
-          <div className=" flex flex-col items-center text-center space-y-3 transition ease-in-out duration-500 text-customGrayHeavy dark:text-[#AAAAAA] hover:scale-125 hover:text-black dark:hover:text-white ">
-            <img
-              width="55px"
-              height="55px"
-              src="/icons/tailwind.svg"
-              alt="Database svg icon"
-            />
-            <span>React.js</span>
-          </div>{" "}
-          <div
-            className=" flex flex-col items-center text-center space-y-3
-           transition ease-in-out duration-500 text-customGrayHeavy
-            dark:text-[#AAAAAA] hover:scale-125 hover:text-black dark:hover:text-white "
-          >
-            {" "}
-            <img
-              width="55px"
-              height="55px"
-              src="/icons/code-json.svg"
-              alt="json web token svg icon"
-            />
-            <span>JSON WEB TOKEN</span>
-          </div>
-          <div className=" flex flex-col items-center text-center space-y-3 transition ease-in-out duration-500 text-customGrayHeavy dark:text-[#AAAAAA] hover:scale-125 hover:text-black dark:hover:text-white ">
-            <img
-              width="55px"
-              height="55px"
-              src="/icons/data-type-json.svg"
-              alt="data-type-json svg icon"
-            />
-            <span>TypeORM</span>
-          </div>
-          <div
-            className=" flex flex-col items-center text-center space-y-3
-           transition ease-in-out duration-500 text-customGrayHeavy
-            dark:text-[#AAAAAA] hover:scale-125 hover:text-black dark:hover:text-white "
-          >
-            <img
-              width="50px"
-              height="50px"
-              src="/icons/prisma.svg"
-              alt="prisma svg icon"
-            />
-            <span>Prisma</span>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   );
 }
+const SkillItem3 = ({
+  //@ts-ignore
+  src,
+  //@ts-ignore
+  name,
+  width = 45,
+  height = 45,
+  scale = "scale-100",
+}) => (
+  <div className="flex flex-col items-center text-center space-y-3 transition ease-in-out duration-500 text-customGrayHeavy dark:text-[#AAAAAA] hover:scale-125 hover:text-black dark:hover:text-white">
+    <div className={`h-12 flex items-center ${scale}`}>
+      <img
+        width={width}
+        height={height}
+        src={src}
+        alt={name}
+        className="w-full h-full"
+      />
+    </div>
+    <p>{name}</p>
+  </div>
+);
+
 function SkillSec3() {
   useGSAP(() => {
     gsap.from(".database", {
@@ -348,6 +340,7 @@ function SkillSec3() {
         scroller: ".main-scroller",
       },
     });
+
     gsap.from(".infra", {
       x: 50,
       opacity: 0,
@@ -364,11 +357,31 @@ function SkillSec3() {
       },
     });
   });
+
+  const databases = [
+    { src: "/images/image/PostgresSQL.png", name: "PostgreSQL" },
+    { src: "/images/image/MySQL.png", name: "MySQL" },
+    { src: "/images/image/MongoDB.png", name: "MongoDB" },
+    {
+      src: "/images/image/Firebase.png",
+      name: "Firebase",
+      scale: "scale-75",
+    },
+  ];
+
+  const infrastructure = [
+    {
+      src: "/images/image/Docker.png",
+      name: "Docker",
+      scale: "scale-75",
+    },
+  ];
+
   return (
-    <div className=" border border-b-0 border-x-0 border-t-[2px] border-t-[#69666c] p-[38px]">
+    <div className="border border-b-0 border-x-0 border-t-[2px] border-t-[#69666c] p-[38px]">
       <div className="infraData mt-[64px] grid grid-cols-2 max-lg:grid-cols-1">
         <div className="database border-r-2 px-[48px] max-lg:border-0 border-r-[#69666c]">
-          <div className=" flex items-center flex-col">
+          <div className="flex items-center flex-col">
             <img
               width="45px"
               height="45px"
@@ -377,82 +390,41 @@ function SkillSec3() {
             />
             <h2 className="text-[28px] font-[700] text-primary-0">Databases</h2>
           </div>
-          <div
-            className="grid gap-y-[64px] :gap-x-[64px]
-             max-lg:grid-cols-3  grid-cols-3 mt-[48px]
-             "
-          >
-            <div className=" flex flex-col items-center text-center space-y-3 transition ease-in-out duration-500 text-customGrayHeavy dark:text-[#AAAAAA] hover:scale-125 hover:text-black dark:hover:text-white ">
-              <img
-                width="45px"
-                height="45px"
-                src="/icons/postgresql.svg"
-                alt="postgresql svg icon"
+
+          <div className="grid gap-y-[64px] max-lg:grid-cols-3 grid-cols-3 mt-[48px]">
+            {databases.map((db, index) => (
+              <SkillItem3
+                key={index}
+                src={db.src}
+                name={db.name}
+                scale={db.scale}
               />
-              <span>PostgreSQL</span>
-            </div>
-            <div className=" flex flex-col items-center text-center space-y-3 transition ease-in-out duration-500 text-customGrayHeavy dark:text-[#AAAAAA] hover:scale-125 hover:text-black dark:hover:text-white ">
-              <img
-                width="45px"
-                height="45px"
-                src="/icons/mysql-original (1).svg"
-                alt="mysql-original (1) svg icon"
-              />
-              <span>MySQL</span>
-            </div>
-            <div className=" flex flex-col items-center text-center space-y-3 transition ease-in-out duration-500 text-customGrayHeavy dark:text-[#AAAAAA] hover:scale-125 hover:text-black dark:hover:text-white ">
-              <img
-                width="45px"
-                height="45px"
-                src="/icons/mongodb-original.svg"
-                alt="mongodb-original svg icon"
-              />
-              <span>MongoDB</span>
-            </div>
-            <div className=" flex flex-col items-center text-center space-y-3 transition ease-in-out duration-500 text-customGrayHeavy dark:text-[#AAAAAA] hover:scale-125 hover:text-black dark:hover:text-white ">
-              <div className="  flex items-center scale-75">
-                <img
-                  width="45px"
-                  height="45px"
-                  src="/icons/firebase.svg"
-                  alt="firebase svg icon"
-                />
-              </div>
-              <p>Firebase</p>
-            </div>
+            ))}
           </div>
         </div>
 
         <div className="px-12 infra">
-          <div className=" flex items-center flex-col">
+          <div className="flex items-center flex-col">
             <img
               width="45px"
               height="45px"
               src="/icons/git.svg"
               alt="git svg icon"
             />
-            <h2 className=" text-[28px] font-[700] text-primary-0">
-              Infrastructre
+            <h2 className="text-[28px] font-[700] text-primary-0">
+              Infrastructure
             </h2>
           </div>
-          <div
-            className=" grid max-lg:gap-y-[64px]  max-lg:gap-x-[64px] 
-        max-lg:grid-cols-3  grid-cols-3 mt-[48px] 
-        lg:space-x-[106px]"
-          >
-            <div className=" flex flex-col items-center text-center space-y-3 transition ease-in-out duration-500 text-customGrayHeavy dark:text-[#AAAAAA] hover:scale-125 hover:text-black dark:hover:text-white ">
-              <div className="h-12 flex items-center scale-75">
-                <div>
-                  <img
-                    width="45px"
-                    height="45px"
-                    src="/icons/docker.svg"
-                    alt="docker svg icon"
-                  />
-                </div>
-              </div>
-              <p>Docker</p>
-            </div>
+
+          <div className="grid max-lg:gap-y-[64px] max-lg:gap-x-[64px] max-lg:grid-cols-3 grid-cols-3 mt-[48px] lg:space-x-[106px]">
+            {infrastructure.map((infra, index) => (
+              <SkillItem3
+                key={index}
+                src={infra.src}
+                name={infra.name}
+                scale={infra.scale}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -537,7 +509,7 @@ function SkillSec4() {
             <img
               width="45px"
               height="45px"
-              src="/icons/github.svg"
+              src="/images/image/GitHub.png"
               alt="github svg icon"
             />
             <span>Github</span>
@@ -560,18 +532,21 @@ function SkillSec4() {
            dark:hover:text-white "
           >
             <div className="h-12 flex items-center scale-75">
-              <div>
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M12 1L24 22H0L12 1Z" fill="#fff"></path>
-                </svg>
+              <div
+                className="w-fit flex flex-col items-center text-center 
+          space-y-3 transition ease-in-out duration-500 text-customGrayHeavy
+           dark:text-[#AAAAAA] hover:scale-125 hover:text-black
+            dark:hover:text-white "
+              >
+                <img
+                  width="60px"
+                  height="60px"
+                  src="/images/image/Vercel.png"
+                  alt="github svg icon"
+                />{" "}
+                <p className="dark:text-[#AAAAAA]">Vercel</p>
               </div>
             </div>
-            <p className="dark:text-[#AAAAAA]">Vercel</p>
           </div>
         </div>
         <div className="rightDiv">

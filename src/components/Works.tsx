@@ -6,13 +6,15 @@ interface WorkType {
   header: string;
   subHeader: string;
   technologies: string[];
+  link?: string;
 }
 
-function Work({ imgSrc, header, subHeader, technologies }: WorkType) {
+function Work({ imgSrc, header, subHeader, technologies, link }: WorkType) {
   return (
     <div
-      className="my-9 work-item rounded-lg relative transition-all ease-in-out duration-500 hover:scale-110
-    shadow-xl h-[620px] bg-[#424242]"
+      className="my-9 work-item rounded-lg relative transition-all
+       ease-in-out duration-500 hover:scale-110
+    shadow-xl h-[720px] bg-[#424242]"
     >
       <div>
         <img
@@ -34,16 +36,16 @@ function Work({ imgSrc, header, subHeader, technologies }: WorkType) {
             ))}
           </ul>
         </div>
+        <a className="m-3  text-[#FFC400] font-[600] text-lg absolute bottom-0">
+          Live
+        </a>
 
-        <p className="m-3 text-[#FFC400] font-[600] text-lg absolute bottom-0">
-          Active
-        </p>
         <a
-          href="https://pawaret.dev/"
+          href={link}
           target="_blank"
-          aria-label="https://pawaret.dev/"
+          aria-label={link}
           rel="noopener noreferrer"
-          className="p-3 absolute bottom-0 m-3  right-0 transition duration-300 ease-in-out hover:scale-125 
+          className="p-3 absolute bottom-0 m-3  cursor-pointer right-0 transition duration-300 ease-in-out hover:scale-125 
           hover:text-primary"
         >
           <svg
@@ -66,7 +68,81 @@ function Work({ imgSrc, header, subHeader, technologies }: WorkType) {
     </div>
   );
 }
-
+const works = [
+  {
+    header: "PromptPilot",
+    subHeader:
+      "AI-powered platform for efficient prompt generation and response handling.",
+    technologies: [
+      "Turborepo",
+      "Next",
+      "React",
+      "Tailwind",
+      "React Libraries",
+      "Gemini Ai",
+    ],
+    imgSrc: "/images/pp.jpg",
+    className: "work 1",
+    link: "https://uni-kitab-final2-web.vercel.app/home",
+  },
+  {
+    header: "UniKitab",
+    subHeader:
+      "Unikitab: The ultimate study companion for college students. Access previous year question papers (PYQs), get AI-powered notemaking and answers, explore LeetCode DSA questions, and practice with personalized solutions by uploading your DSA sheets.",
+    technologies: [
+      "Turborepo",
+      "Next",
+      "React",
+      "Tailwind",
+      "React Libraries",
+      "Gemini Ai",
+    ],
+    imgSrc: "/images/saasUniKitab.png",
+    className: "work 2",
+    link: "https://uni-kitab-final2-web.vercel.app/home",
+  },
+  {
+    header: "PromptPilot",
+    subHeader: "Bla blah",
+    technologies: ["Bext", "react", "react"],
+    imgSrc: "/images/pp.jpg",
+    className: "work1",
+  },
+  {
+    header: "PromptPilot",
+    subHeader: "Bla blahBla blahBla blahBla blahBla blahBla blah",
+    technologies: [
+      "React",
+      "React",
+      "React",
+      "React",
+      "React",
+      "React",
+      "React",
+      "React",
+      "React",
+    ],
+    imgSrc: "/images/pp.jpg",
+    className: "work2",
+    link: "https://uni-kitab-final2-web.vercel.app/home",
+  },
+  {
+    header: "PromptPilot",
+    subHeader: "Bla blah",
+    technologies: ["Bext", "react", "react"],
+    imgSrc: "/images/pp.jpg",
+    className: "work2",
+    link: "https://uni-kitab-final2-web.vercel.app/home",
+  },
+  {
+    header: "PromptPilot",
+    subHeader: "Bla blah",
+    technologies: ["Bext", "react", "react"],
+    imgSrc: "/images/pp.jpg",
+    className: "work2",
+    link: "https://uni-kitab-final2-web.vercel.app/home",
+  },
+];
 export const Works = () => {
   useGSAP(() => {
     gsap.from(".work1", {
@@ -122,82 +198,18 @@ export const Works = () => {
             see more? visit for more
           </p>
         </div>
-        <div
-          className="grid max-lg:grid-cols-2 max-md:grid-cols-1 
-        grid-cols-3 gap-[28px]"
-        >
-          <div className="work1">
-            <Work
-              header="PromptPilot"
-              subHeader="Bla blahBla blahBla blahBla blahBla blahBla blah"
-              technologies={[
-                "React ",
-                "React",
-                "React",
-                "React",
-                "React",
-                "React",
-                "React",
-                "React",
-                "React",
-              ]}
-              imgSrc="/images/pp.jpg"
-            />
-          </div>
-          <div className="work1">
-            {" "}
-            <Work
-              header="PromptPilot"
-              subHeader="Bla blah"
-              technologies={["Bext ", "react", "react"]}
-              imgSrc="/images/pp.jpg"
-            />{" "}
-          </div>
-          <div className="work1">
-            {" "}
-            <Work
-              header="PromptPilot"
-              subHeader="Bla blah"
-              technologies={["Bext ", "react", "react"]}
-              imgSrc="/images/pp.jpg"
-            />
-          </div>
-          <div className="work2">
-            <Work
-              header="PromptPilot"
-              subHeader="Bla blahBla blahBla blahBla blahBla blahBla blah"
-              technologies={[
-                "React ",
-                "React",
-                "React",
-                "React",
-                "React",
-                "React",
-                "React",
-                "React",
-                "React",
-              ]}
-              imgSrc="/images/pp.jpg"
-            />
-          </div>
-          <div className="work2">
-            {" "}
-            <Work
-              header="PromptPilot"
-              subHeader="Bla blah"
-              technologies={["Bext ", "react", "react"]}
-              imgSrc="/images/pp.jpg"
-            />{" "}
-          </div>
-          <div className="work2">
-            {" "}
-            <Work
-              header="PromptPilot"
-              subHeader="Bla blah"
-              technologies={["Bext ", "react", "react"]}
-              imgSrc="/images/pp.jpg"
-            />
-          </div>
+        <div className="grid max-lg:grid-cols-2 max-md:grid-cols-1 grid-cols-3 gap-[28px]">
+          {works.map((work, index) => (
+            <div key={index} className={work.className}>
+              <Work
+                link={work.link}
+                header={work.header}
+                subHeader={work.subHeader}
+                technologies={work.technologies}
+                imgSrc={work.imgSrc}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

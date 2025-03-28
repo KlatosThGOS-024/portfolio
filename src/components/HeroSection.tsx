@@ -13,16 +13,17 @@ export const HeroSection = () => {
             <div className=" flex gap-6 ">
               <span className="h-0.5 w-16 mt-3 bg-black dark:bg-white hidden md:block"></span>
               <p className=" text-[21px] break-words text-wrap">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Et in
-                inventore, aliquid tempore dolore incidunt, veritatis labore
-                odit debitis saepe sint nobis nostrum itaque! Et saepe sint
-                libero corporis ducimus!
+                "This is Priyanshu Tiwari. I am a Full-Stack Developer
+                specializing in Backend Architecture, scalable systems, LLM
+                integrations, and distributed architectures. I also have
+                experience in Frontend Architecture, System Design, Automation
+                Testing, and Site Reliability Engineering. To know more, kindly
+                visit here
               </p>
             </div>
             <div className=" space-y-[64px] mt-[48px]  text-center flex items-center flex-col">
               <span className="text-[26px]  break-words w-4/5">
-                "debitis saepe sint nobis nostrum itaque! Et saepe sint libero
-                corporis ducimus!"
+                "Hope is what makes us"
               </span>
               <div className="flex gap-[64px]">
                 <span className=" bg-[#424242] p-3 rounded-full hover:text-primary-0">
